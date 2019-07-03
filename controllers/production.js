@@ -28,7 +28,9 @@ const getProductions = async (req, res, next) => {
     });
 
     res.send(productions);
-  } catch (err) {}
+  } catch (err) {
+    handleError(err, next);
+  }
 };
 
 const createProduction = async (req, res, next) => {
